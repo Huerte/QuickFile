@@ -1,12 +1,16 @@
-<div align="center">
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/71af1eb2-527c-4261-84f8-46e55809a04b" width="900" alt="QuickFile Preview"/>
+</p>
 
-# QuickFile
+<h1 align="center">QuickFile</h1>
 
-[![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](#)
-[![Platform](https://img.shields.io/badge/platform-Python-blueviolet.svg)](#)
-[![License](https://img.shields.io/badge/license-MIT-green.svg)](#)
+<p align="center">
+  <img src="https://img.shields.io/badge/version-1.0.0-blue.svg">
+  <img src="https://img.shields.io/badge/platform-Python-blueviolet.svg">
+  <img src="https://img.shields.io/badge/license-MIT-green.svg">
+</p>
 
-**A lightweight CLI tool to qckly batch-generate files with automatic sequential naming.**
+**A lightweight CLI tool to quickly batch-generate files with automatic sequential naming.**
 
 </div>
 
