@@ -28,15 +28,15 @@ if %errorLevel% neq 0 (
 echo [INFO] Python detected: 
 python --version
 
-if not exist "%SRC_DIR%\quick.py" (
-    echo [ERROR] quick.py not found in src directory!
+if not exist "%SRC_DIR%\qck.py" (
+    echo [ERROR] qck.py not found in src directory!
     echo Make sure you're running this from the QuickFile root directory.
     pause
     exit /b 1
 )
 
-if not exist "%SRC_DIR%\quick.bat" (
-    echo [ERROR] quick.bat not found in src directory!
+if not exist "%SRC_DIR%\qck.bat" (
+    echo [ERROR] qck.bat not found in src directory!
     pause
     exit /b 1
 )
@@ -104,7 +104,7 @@ echo.
 echo [INFO] Testing installation...
 
 setlocal
-where quick >nul 2>&1
+where qck >nul 2>&1
 if %errorLevel% == 0 (
     echo [SUCCESS] QuickFile is working correctly!
     echo.
