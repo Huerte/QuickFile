@@ -10,7 +10,9 @@
   <img src="https://img.shields.io/badge/license-MIT-green.svg">
 </p>
 
-**A lightweight CLI tool to quickly batch-generate files with automatic sequential naming.**
+<div align="center">
+  A lightweight CLI tool to quickly batch-generate files with automatic sequential naming.
+</div>
 
 </div>
 
