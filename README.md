@@ -48,19 +48,7 @@ cd QuickFile
 
 ---
 
-### Step 2: Install Dependencies
-
-_No external dependencies required._
-
----
-
-### Step 3: Build (If Applicable)
-
-_No build step required._
-
----
-
-### Step 4: Run / Package
+### Step 2: Run / Package
 
 ```bash
 python src/qck.py <extension_or_filename> [count]
