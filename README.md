@@ -109,7 +109,7 @@ QuickFile/
 
 ---
 
-## Configuration (If Applicable)
+## Configuration
 
 QuickFile creates a `config.json` automatically in `~/.quickfile/config.json` when first run or configured.
 
