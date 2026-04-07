@@ -51,7 +51,7 @@ cd QuickFile
 ### Step 2: Run / Package
 
 ```bash
-python src/qck.py <extension_or_filename> [count]
+python src/mk.py <extension_or_filename> [count]
 ```
 
 ---
@@ -60,25 +60,25 @@ python src/qck.py <extension_or_filename> [count]
 
 1. **Generate a single file with an extension:**
    ```bash
-   python src/qck.py txt
+   python src/mk.py txt
    ```
    *(Creates `file1.txt`, assuming default prefix `file`)*
 
 2. **Generate multiple files at once:**
    ```bash
-   python src/qck.py txt 5
+   python src/mk.py txt 5
    ```
    *(Creates `file1.txt`, `file2.txt`, ..., `file5.txt`)*
 
 3. **Generate a file with a specific name:**
    ```bash
-   python src/qck.py my_script.py
+   python src/mk.py my_script.py
    ```
    *(Creates `my_script.py`, or `my_script1.py` if it exists)*
 
 4. **Change the default file prefix:**
    ```bash
-   python src/qck.py -s prename=custom_prefix
+   python src/mk.py -s prename=custom_prefix
    ```
 
 ---
@@ -89,7 +89,7 @@ python src/qck.py <extension_or_filename> [count]
 QuickFile/
 │
 ├── src/                # Core logic
-│   ├── qck.py        # Main CLI script
+│   ├── mk.py        # Main CLI script
 │   └── config.json     # Auto-generated configuration file
 └── README.md
 ```
@@ -103,7 +103,7 @@ QuickFile creates a `config.json` automatically when first run to store settings
 Edit the configuration using the CLI:
 
 ```bash
-python src/qck.py -s prename=your_prefix
+python src/mk.py -s prename=your_prefix
 ```
 
 Example `config.json` output:
