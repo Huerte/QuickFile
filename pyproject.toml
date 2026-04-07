@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "quickfile"
+dynamic = ["version"]
+description = "A lightweight CLI tool to quickly batch-generate files with automatic sequential naming."
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "MIT" }
+authors = [
+    { name = "HuerteDev" }
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.scripts]
+mk = "quickfile.cli:main"
+
+[tool.setuptools.dynamic]
+version = {attr = "quickfile.__init__.__version__"}

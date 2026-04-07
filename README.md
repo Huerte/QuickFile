@@ -35,7 +35,7 @@ Follow these steps to set up QuickFile locally.
 
 ### Prerequisites
 
-- **Python 3.6+**
+- **Python 3.8+**
 
 ---
 
@@ -48,10 +48,15 @@ cd QuickFile
 
 ---
 
-### Step 2: Run / Package
+### Step 2: Install Package
 
 ```bash
-python src/mk.py <extension_or_filename> [count]
+pip install -e .
+```
+
+To uninstall:
+```bash
+pip uninstall quickfile
 ```
 
 ---
@@ -60,25 +65,33 @@ python src/mk.py <extension_or_filename> [count]
 
 1. **Generate a single file with an extension:**
    ```bash
-   python src/mk.py txt
+   mk txt
    ```
    *(Creates `file1.txt`, assuming default prefix `file`)*
 
 2. **Generate multiple files at once:**
    ```bash
-   python src/mk.py txt 5
+   mk txt 5
    ```
    *(Creates `file1.txt`, `file2.txt`, ..., `file5.txt`)*
 
 3. **Generate a file with a specific name:**
    ```bash
-   python src/mk.py my_script.py
+   mk my_script.py
    ```
    *(Creates `my_script.py`, or `my_script1.py` if it exists)*
 
 4. **Change the default file prefix:**
    ```bash
-   python src/mk.py -s prename=custom_prefix
+   mk config set prefix custom_prefix
+   ```
+
+5. **Show other commands:**
+   ```bash
+   mk --help
+   mk --version
+   mk config show
+   mk config reset
    ```
 
 ---
@@ -88,9 +101,9 @@ python src/mk.py <extension_or_filename> [count]
 ```
 QuickFile/
 │
+├── pyproject.toml      # Package metadata
 ├── src/                # Core logic
-│   ├── mk.py        # Main CLI script
-│   └── config.json     # Auto-generated configuration file
+│   └── quickfile/      # Main package directory
 └── README.md
 ```
 
@@ -98,20 +111,12 @@ QuickFile/
 
 ## Configuration (If Applicable)
 
-QuickFile creates a `config.json` automatically when first run to store settings like the default file prefix.
+QuickFile creates a `config.json` automatically in `~/.quickfile/config.json` when first run or configured.
 
 Edit the configuration using the CLI:
 
 ```bash
-python src/mk.py -s prename=your_prefix
-```
-
-Example `config.json` output:
-
-```json
-{
-  "prename": "your_prefix"
-}
+mk config set prefix your_prefix
 ```
 
 ---
