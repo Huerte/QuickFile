@@ -26,6 +26,12 @@ Built to be fast, simple, and configurable.
 - **Automatic Sequential Naming:** Automatically appends increasing numbers (e.g., `file1.txt`, `file2.txt`) to avoid filename collisions.
 - **Batch Generation:** Create multiple files of the same extension instantly by specifying a count.
 - **Configurable Default Naming:** Easily customize the default prefix name for generated files via command-line configuration.
+- **Interactive Mode:** Run `mk` without arguments for a guided setup.
+- **Content & Templates:** Inject initial text or use template files for generated content. Supports variable replacement (`{n}`, `{date}`, `{time}`, `{filename}`).
+- **Pattern-based Naming:** Use placeholders like `{date}` and `{n}` for custom naming logic.
+- **Output Management:** Specify a target directory and perform dry runs to preview actions.
+- **Advanced Sequencing:** Support for zero-padding (e.g., `001`) and custom starting indices.
+- **Undo Support:** Quickly revert the last batch of generated files with `mk undo`.
 
 ---
 
@@ -81,18 +87,52 @@ pip uninstall quickfile
    ```
    *(Creates `my_script.py`, or `my_script1.py` if it exists)*
 
-4. **Change the default file prefix:**
+4. **Use Pattern-based Naming & Padding:**
    ```bash
-   mk config set prefix custom_prefix
+   mk "log_{date}_{n}.txt" 3 --padding 3
+   ```
+   *(Creates `log_2024-01-01_001.txt`, `log_2024-01-01_002.txt`, etc.)*
+
+5. **Specify Output Directory & Content with Variables:**
+   ```bash
+   mk md 5 --out ./docs --content "# {filename} Created on {date}"
    ```
 
-5. **Show other commands:**
+6. **Use a Template File:**
    ```bash
-   mk --help
-   mk --version
-   mk config show
-   mk config reset
+   mk py --template my_template.py
    ```
+
+7. **Undo the last operation:**
+   ```bash
+   mk undo
+   ```
+
+8. **Dry Run (Preview):**
+   ```bash
+   mk txt 10 --dry-run
+   ```
+
+9. **Interactive Mode:**
+   ```bash
+   mk
+   ```
+   *(Starts a guided wizard to generate files)*
+
+10. **Configure Default Settings:**
+    ```bash
+    mk config set prefix my_file
+    mk config set padding 2
+    mk config set start_index 100
+    ```
+
+11. **Show other commands:**
+    ```bash
+    mk --help
+    mk --version
+    mk config show
+    mk config reset
+    ```
 
 ---
 

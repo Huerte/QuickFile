@@ -3,11 +3,15 @@ import os
 from pathlib import Path
 
 VALID_KEYS = {
-    "prefix": str
+    "prefix": str,
+    "padding": int,
+    "start_index": int
 }
 
 DEFAULT_CONFIG = {
-    "prefix": "file"
+    "prefix": "file",
+    "padding": 0,
+    "start_index": 1
 }
 
 def get_config_path():
@@ -57,3 +61,24 @@ def set_value(key, value):
 
 def reset_config():
     save_config(DEFAULT_CONFIG)
+
+def save_last_run(file_paths):
+    config_dir = Path.home() / ".quickfile"
+    last_run_path = config_dir / "last_run.json"
+    with open(last_run_path, "w", encoding="utf-8") as f:
+        json.dump(file_paths, f, indent=2)
+
+def load_last_run():
+    last_run_path = Path.home() / ".quickfile" / "last_run.json"
+    if not last_run_path.exists():
+        return []
+    try:
+        with open(last_run_path, "r", encoding="utf-8") as f:
+            return json.load(f)
+    except (json.JSONDecodeError, OSError):
+        return []
+
+def clear_last_run():
+    last_run_path = Path.home() / ".quickfile" / "last_run.json"
+    if last_run_path.exists():
+        last_run_path.unlink()
