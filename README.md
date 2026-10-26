@@ -14,8 +14,6 @@
   A lightweight CLI tool to quickly batch-generate files with automatic sequential naming.
 </div>
 
-</div>
-
 ---
 
 ## Features
